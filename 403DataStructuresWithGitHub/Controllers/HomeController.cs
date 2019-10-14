@@ -8,15 +8,15 @@ namespace _403DataStructuresWithGitHub.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+        //Displays the index view
         public ActionResult Index()
         {
             return View();
         }
-
+        //Redirects the webpage to the BYU homepage
         public ActionResult Exit()
         {
-            return Redirect("http://www.espn.com");
+            return Redirect("https://www.byu.edu");
         }
 
     }
