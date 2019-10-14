@@ -6,7 +6,9 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
+    <link href="~/Content/SubHomeStyleSheet.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <title>Dictionary Index</title>
@@ -15,46 +17,46 @@
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
         <h3 class="w3-bar-item">Dictionary</h3>
         <ul>
-            <li>
+            <li> <!--This routes to the Dictionary Controler and then finds the AddOne method-->
                 <a href="@Url.Action("AddOne","Dictionary")"
                    class="w3-bar-item w3-button">Add One Item to Dictionary</a>
             </li>
-            <li>
+            <li> <!--This routes to the Dictionary Controler and then finds the AddMany method-->
                 <a href="@Url.Action("AddMany","Dictionary")"
                    class="w3-bar-item w3-button">Add Huge List of Items to Dictionary</a>
             </li>
-            <li>
+            <li> <!--This routes to the Dictionary Controler and then finds the Display method-->
                 <a href="@Url.Action("Display","Dictionary")"
                    class="w3-bar-item w3-button">Display Dictionary</a>
             </li>
-            <li>
+            <li> <!--This routes to the Dictionary Controler and then finds the Delete method-->
                 <a href="@Url.Action("Delete","Dictionary")"
                    class="w3-bar-item w3-button">Delete from Dictionary</a>
             </li>
-            <li>
+            <li> <!--This routes to the Dictionary Controler and then finds the Clear method-->
                 <a href="@Url.Action("Clear","Dictionary")"
                    class="w3-bar-item w3-button">Clear Dictionary</a>
             </li>
-            <li>
+            <li> <!--This routes to the Dictionary Controler and then finds the Search method-->
                 <a href="@Url.Action("Search","Dictionary")"
                    class="w3-bar-item w3-button">Search Dictionary</a>
             </li>
-            <li>
+            <li> <!--This routes to the Dictionary Controler and then finds the Return method--> 
                 <a href="@Url.Action("Return","Dictionary")"
                    class="w3-bar-item w3-button">Return to Main Menu</a>
             </li>
         </ul>
     </div>
     <div style="margin-left:26%">
-    <p>@ViewBag.DictionarySearch</p>
-    <p>@ViewBag.StopWatch</p>
-    @if (ViewBag.MyDictionary != null)
-    {
-        foreach (var sData in ViewBag.MyDictionary)
+        <p>@ViewBag.DictionarySearch</p> <!--grabs data from the DictionarySearch variable in the ViewBag-->
+        <p>@ViewBag.StopWatch</p> <!--grabs data from the StopWatch variable in the ViewBag-->
+        @if (ViewBag.MyDictionary != null)
         {
-            <p>@sData</p>
+            foreach (var sData in ViewBag.MyDictionary)<!--grabs data from the MyDictionary variable in the ViewBag-->
+            {
+                <p>@sData</p>
+            }
         }
-    }
     </div>
 </body>
 </html>

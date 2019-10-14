@@ -1,0 +1,13 @@
+﻿/*This imports and image adn centers it the webpage*/
+body { 
+    background-image: url('../Graphics/Header_Coding.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+h3 {
+    background-color: black;
+    color: white;
+}
+
