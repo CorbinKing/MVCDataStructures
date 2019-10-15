@@ -8,10 +8,10 @@ namespace _403DataStructuresWithGitHub.Controllers
 {
     public class QueueController : Controller
     {
-        static Queue<string> myQueue = new Queue<string>();
+        static Queue<string> myQueue = new Queue<string>(); //creates a new queue data storage
 
         string queueSearch = null;
-        // GET: Queue
+        
         public ActionResult Index()
         {
             ViewBag.MyQueue = myQueue;
@@ -19,7 +19,7 @@ namespace _403DataStructuresWithGitHub.Controllers
             return View();
         }
 
-        public ActionResult AddOne()
+        public ActionResult AddOne() //this adds a new entry into the queue
         {
             myQueue.Enqueue("New Entry " + (myQueue.Count + 1));
             ViewBag.MyQueue = null;
@@ -27,7 +27,7 @@ namespace _403DataStructuresWithGitHub.Controllers
             return View("Index");
         }
 
-        public ActionResult AddMany()
+        public ActionResult AddMany() //this clears the queue and loops 2000 times creating new entrys 
         {
             myQueue.Clear();
 
@@ -40,28 +40,28 @@ namespace _403DataStructuresWithGitHub.Controllers
             return View("Index");
         }
 
-        public ActionResult Display()
+        public ActionResult Display() //this displays the current data in the queue. It uses a foreach loop in the views folder
         {
             ViewBag.MyQueue = myQueue;
             return View("Index");
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete() //remove the last entry into the queue
         {
             if (myQueue.Count == 0)
-            {
-                queueSearch = "Can't delete from an empty queue";
-                ViewBag.QueueSearch = queueSearch;
-            }
+                {
+                    queueSearch = "Can't delete from an empty queue";
+                    ViewBag.QueueSearch = queueSearch;
+                }
             else
-            {
-                ViewBag.QueueDeletion = myQueue.Dequeue();
-                ViewBag.MyQueue = null;
-            }
-            return View("Index");
+                {
+                    ViewBag.QueueDeletion = myQueue.Dequeue();
+                    ViewBag.MyQueue = null;
+                }
+                return View("Index");
         }
 
-        public ActionResult Clear()
+        public ActionResult Clear() //clears the whole queue
         {
             myQueue.Clear();
             ViewBag.MyQueue = null;
@@ -69,7 +69,7 @@ namespace _403DataStructuresWithGitHub.Controllers
 
         }
 
-        public ActionResult Search()
+        public ActionResult Search() //searches the queue for the hardcoded input
         {
             queueSearch = "Not Found";
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
@@ -83,7 +83,7 @@ namespace _403DataStructuresWithGitHub.Controllers
                 }
             }
             sw.Stop();
-            TimeSpan ts = sw.Elapsed;
+            TimeSpan ts = sw.Elapsed; //this times the speed of the seach for the input in the queue
 
             ViewBag.StopWatch = ts + " Elapsed";
             ViewBag.MyQueue = null;
@@ -91,7 +91,7 @@ namespace _403DataStructuresWithGitHub.Controllers
             return View("Index");
         }
 
-        public ActionResult Return()
+        public ActionResult Return() //returns to the home view
         {
             return RedirectToAction("Index", "Home");
         }
