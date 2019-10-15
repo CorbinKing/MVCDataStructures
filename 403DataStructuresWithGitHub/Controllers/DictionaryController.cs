@@ -48,8 +48,17 @@ namespace _403DataStructuresWithGitHub.Controllers
 
         public ActionResult Delete()
         {
-            ViewBag.DictionaryDeletion = myDictionary.Remove("New Entry " + (myDictionary.Count));
-            ViewBag.MyDictionary = null;
+            if (myDictionary.Count == 0)
+            {
+                dictionarySearch = "Can't delete from an empty dictionary";
+                ViewBag.DictionarySearch = dictionarySearch;
+            }
+            else
+            {
+                ViewBag.DictionaryDeletion = myDictionary.Remove("New Entry " + (myDictionary.Count));
+                ViewBag.MyDictionary = null;
+            }
+            
             return View("Index");
         }
 

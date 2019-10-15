@@ -48,8 +48,16 @@ namespace _403DataStructuresWithGitHub.Controllers
 
         public ActionResult Delete()
         {
-            ViewBag.QueueDeletion = myQueue.Dequeue();
-            ViewBag.MyQueue = null;
+            if (myQueue.Count == 0)
+            {
+                queueSearch = "Can't delete from an empty queue";
+                ViewBag.QueueSearch = queueSearch;
+            }
+            else
+            {
+                ViewBag.QueueDeletion = myQueue.Dequeue();
+                ViewBag.MyQueue = null;
+            }
             return View("Index");
         }
 
