@@ -48,9 +48,17 @@ namespace _403DataStructuresWithGitHub.Controllers
 
         public ActionResult Delete()
         {
-            ViewBag.StackDeletion = myStack.Pop();
-            ViewBag.MyStack = null;
-            return View("Index");
+            if (myStack.Count == 0)
+            {
+                stackSearch = "Can't delete from an empty stack";
+                ViewBag.StackSearch = stackSearch;
+            }
+            else
+            {
+                ViewBag.StackDeletion = myStack.Pop();
+                ViewBag.MyStack = null;
+            }
+                return View("Index");
         }
 
         public ActionResult Clear()
