@@ -1,4 +1,8 @@
-﻿
+﻿<!--AUTHORS:
+    Corbin King
+    Jake Saylor
+    Michael Jenkins
+    Peter Madsen-->
 @{
     Layout = null;
 }
@@ -14,19 +18,20 @@
     <title>Index</title>
 </head>
 <body>
-    <div class="topnav"> <!--This goes to the Stack Controler and then finds the Index View-->
+    <div class="topnav">
+        <!--This goes to the Stack Controler and then finds the Index View-->
 
-                <a href="@Url.Action("Index","Stack")"
-                   class="w3-bar-item w3-button">Stack</a>
-           
-                <a href="@Url.Action("Index","Queue")"
-                   class="w3-bar-item w3-button">Queue</a>
-            
-                <a href="@Url.Action("Index","Dictionary")"
-                   class="w3-bar-item w3-button">Dictionary</a>
-            
-                <a href="@Url.Action("Exit","Home")"
-                   class="w3-bar-item w3-button">Exit</a>
+        <a href="@Url.Action("Index","Stack")"
+           class="w3-bar-item w3-button">Stack</a>
+
+        <a href="@Url.Action("Index","Queue")"
+           class="w3-bar-item w3-button">Queue</a>
+
+        <a href="@Url.Action("Index","Dictionary")"
+           class="w3-bar-item w3-button">Dictionary</a>
+
+        <a href="@Url.Action("Exit","Home")"
+           class="w3-bar-item w3-button">Exit</a>
 
     </div>
 </body>

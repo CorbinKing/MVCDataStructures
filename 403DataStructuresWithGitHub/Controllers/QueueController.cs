@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*AUTHORS:
+ * Corbin King
+ * Jake Saylor
+ * Michael Jenkins
+ * Peter Madsen
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

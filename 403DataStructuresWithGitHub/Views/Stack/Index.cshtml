@@ -1,4 +1,8 @@
-﻿
+﻿<!--AUTHORS:
+    Corbin King
+    Jake Saylor
+    Michael Jenkins
+    Peter Madsen-->
 @{
     Layout = null;
 }
@@ -17,31 +21,38 @@
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
         <h3 class="w3-bar-item">Stack</h3>
         <ul>
-            <li> <!--This routes to the Stack Controler and then finds the AddOne method-->
+            <li>
+                <!--This routes to the Stack Controler and then finds the AddOne method-->
                 <a href="@Url.Action("AddOne","Stack")"
                    class="w3-bar-item w3-button">Add One Item to Stack</a>
             </li>
-            <li> <!--This routes to the Stack Controler and then finds the AddMany method-->
+            <li>
+                <!--This routes to the Stack Controler and then finds the AddMany method-->
                 <a href="@Url.Action("AddMany","Stack")"
                    class="w3-bar-item w3-button">Add Huge List of Items to Stack</a>
             </li>
-            <li> <!--This routes to the Stack Controler and then finds the Display method-->
+            <li>
+                <!--This routes to the Stack Controler and then finds the Display method-->
                 <a href="@Url.Action("Display","Stack")"
                    class="w3-bar-item w3-button">Display Stack</a>
             </li>
-            <li> <!--This routes to the Stack Controler and then finds the Delete method-->
+            <li>
+                <!--This routes to the Stack Controler and then finds the Delete method-->
                 <a href="@Url.Action("Delete","Stack")"
                    class="w3-bar-item w3-button">Delete from Stack</a>
             </li>
-            <li> <!--This routes to the Stack Controler and then finds the Clear method-->
+            <li>
+                <!--This routes to the Stack Controler and then finds the Clear method-->
                 <a href="@Url.Action("Clear","Stack")"
                    class="w3-bar-item w3-button">Clear Stack</a>
             </li>
-            <li> <!--This routes to the Stack Controler and then finds the Search method-->
+            <li>
+                <!--This routes to the Stack Controler and then finds the Search method-->
                 <a href="@Url.Action("Search","Stack")"
                    class="w3-bar-item w3-button">Search Stack</a>
             </li>
-            <li> <!--This routes to the Stack Controler and then finds the Return method-->
+            <li>
+                <!--This routes to the Stack Controler and then finds the Return method-->
                 <a href="@Url.Action("Return","Stack")"
                    class="w3-bar-item w3-button">Return to Main Menu</a>
             </li>
@@ -51,12 +62,12 @@
         <p>@ViewBag.StackSearch</p> <!--grabs data from the StackSearch variable in the ViewBag-->
         <p>@ViewBag.StopWatch</p> <!--grabs data from the StopWatch variable in the ViewBag-->
         @if (ViewBag.MyStack != null)
-    {
-        foreach (var sData in ViewBag.MyStack)
         {
-            <p>@sData</p>
-    }
-}
+            foreach (var sData in ViewBag.MyStack)
+            {
+                <p>@sData</p>
+            }
+        }
     </div>
 </body>
 </html>

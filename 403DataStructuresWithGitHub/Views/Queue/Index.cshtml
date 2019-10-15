@@ -1,4 +1,8 @@
-﻿
+﻿<!--AUTHORS:
+    Corbin King
+    Jake Saylor
+    Michael Jenkins
+    Peter Madsen-->
 @{
     Layout = null;
 }
@@ -18,31 +22,38 @@
     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
         <h3 class="w3-bar-item">Queue</h3>
         <ul>
-            <li> <!--This routes to the Queue Controler and then finds the AddOne method-->
+            <li>
+                <!--This routes to the Queue Controler and then finds the AddOne method-->
                 <a href="@Url.Action("AddOne","Queue")"
                    class="w3-bar-item w3-button">Add One Item to Queue</a>
             </li>
-            <li> <!--This routes to the Queue Controler and then finds the AddMany method-->
+            <li>
+                <!--This routes to the Queue Controler and then finds the AddMany method-->
                 <a href="@Url.Action("AddMany","Queue")"
                    class="w3-bar-item w3-button">Add Huge List of Items to Queue</a>
             </li>
-            <li> <!--This routes to the Queue Controler and then finds the Display method-->
+            <li>
+                <!--This routes to the Queue Controler and then finds the Display method-->
                 <a href="@Url.Action("Display","Queue")"
                    class="w3-bar-item w3-button">Display Queue</a>
             </li>
-            <li> <!--This routes to the Queue Controler and then finds the Delete method-->
+            <li>
+                <!--This routes to the Queue Controler and then finds the Delete method-->
                 <a href="@Url.Action("Delete","Queue")"
                    class="w3-bar-item w3-button">Delete from Queue</a>
             </li>
-            <li> <!--This routes to the Queue Controler and then finds the Clear method-->
+            <li>
+                <!--This routes to the Queue Controler and then finds the Clear method-->
                 <a href="@Url.Action("Clear","Queue")"
                    class="w3-bar-item w3-button">Clear Queue</a>
             </li>
-            <li> <!--This routes to the Queue Controler and then finds the Search method-->
+            <li>
+                <!--This routes to the Queue Controler and then finds the Search method-->
                 <a href="@Url.Action("Search","Queue")"
                    class="w3-bar-item w3-button">Search Queue</a>
             </li>
-            <li> <!--This routes to the Queue Controler and then finds the Serach method-->
+            <li>
+                <!--This routes to the Queue Controler and then finds the Serach method-->
                 <a href="@Url.Action("Return","Queue")"
                    class="w3-bar-item w3-button">Return to Main Menu</a>
             </li>
@@ -54,7 +65,7 @@
         <p>@ViewBag.StopWatch</p> <!--grabs data from the StopWatch variable in the ViewBag-->
         @if (ViewBag.MyQueue != null)
         {
-            foreach (var sData in ViewBag.MyQueue) 
+            foreach (var sData in ViewBag.MyQueue)
             {
                 <p>@sData</p>
             }
