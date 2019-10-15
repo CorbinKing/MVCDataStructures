@@ -46,11 +46,19 @@ namespace _403DataStructuresWithGitHub.Controllers
             return View("Index");
         }
 
-        public ActionResult Delete() //this deletes the most recent entry into the dictioary
+        public ActionResult Delete()  //this deletes the most recent entry into the dictioary
         {
-            ViewBag.DictionaryDeletion = myDictionary.Remove("New Entry " + (myDictionary.Count));
-            ViewBag.MyDictionary = null;
-            return View("Index");
+            if (myDictionary.Count == 0)
+                {
+                    dictionarySearch = "Can't delete from an empty dictionary";
+                    ViewBag.DictionarySearch = dictionarySearch;
+                }
+            else
+                {
+                    ViewBag.DictionaryDeletion = myDictionary.Remove("New Entry " + (myDictionary.Count));
+                    ViewBag.MyDictionary = null;
+                }
+                return View("Index"); 
         }
 
         public ActionResult Clear() //this clears the dictioanry 
@@ -58,7 +66,6 @@ namespace _403DataStructuresWithGitHub.Controllers
             myDictionary.Clear();
             ViewBag.MyDictionary = null;
             return View("Index");
-
         }
 
         public ActionResult Search() //it seaches for the hardcoded entry from the programer and displays an entry or not.

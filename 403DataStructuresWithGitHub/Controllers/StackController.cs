@@ -48,9 +48,17 @@ namespace _403DataStructuresWithGitHub.Controllers
 
         public ActionResult Delete() //remove the most current data entry in the stack
         {
-            ViewBag.StackDeletion = myStack.Pop();
-            ViewBag.MyStack = null;
-            return View("Index");
+             if (myStack.Count == 0) 
+                {
+                    stackSearch = "Can't delete from an empty stack";
+                    ViewBag.StackSearch = stackSearch;
+                }
+            else
+                {
+                    ViewBag.StackDeletion = myStack.Pop();
+                    ViewBag.MyStack = null;
+                }
+                return View("Index");
         }
 
         public ActionResult Clear() //clears the stack of all data
@@ -58,7 +66,6 @@ namespace _403DataStructuresWithGitHub.Controllers
             myStack.Clear();
             ViewBag.MyStack = null;
             return View("Index");
-
         }
 
         public ActionResult Search() //looks for the hardcoded input in the stack

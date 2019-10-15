@@ -48,9 +48,17 @@ namespace _403DataStructuresWithGitHub.Controllers
 
         public ActionResult Delete() //remove the last entry into the queue
         {
-            ViewBag.QueueDeletion = myQueue.Dequeue();
-            ViewBag.MyQueue = null;
-            return View("Index");
+            if (myQueue.Count == 0)
+                {
+                    queueSearch = "Can't delete from an empty queue";
+                    ViewBag.QueueSearch = queueSearch;
+                }
+            else
+                {
+                    ViewBag.QueueDeletion = myQueue.Dequeue();
+                    ViewBag.MyQueue = null;
+                }
+                return View("Index");
         }
 
         public ActionResult Clear() //clears the whole queue
